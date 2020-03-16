@@ -23,6 +23,7 @@ def vidtoframe():
         cv2.imwrite("/home/ash/Desktop/heart/frames/frame%d.jpg" % count, image)  # save frame as JPEG file
         success, image = vidcap.read()
         screen.insert(END,'Read Frame: %d\n' % count)
+        screen.see(END)
         count += 1
 
     return
