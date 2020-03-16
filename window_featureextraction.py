@@ -62,7 +62,7 @@ def open_window_fe():
     text.pack()
 
     global combo
-    combo= ttk.Combobox(MainFrame, values=[" AUDIO ", " VIDEO "], width=100)
+    combo= ttk.Combobox(MainFrame, values=[" AUDIO FEATURE EXTRACTION ", " VIDEO FEATURE EXTRACTION "], width=100)
     combo.pack()
 
     button_proceed = Button(MainFrame, text="PROCEED", font="times 20", padx=40, pady=20, bg="#0bab8c",command=check)
