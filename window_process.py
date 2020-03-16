@@ -18,12 +18,10 @@ def noisered():
 def vidtoframe():
     vidcap = cv2.VideoCapture('appvideo.mp4')
     success, image = vidcap.read()
-    #image = cv2.flip(image, -1)
     count = 0
     while success:
         cv2.imwrite("/home/ash/Desktop/heart/frames/frame%d.jpg" % count, image)  # save frame as JPEG file
         success, image = vidcap.read()
-        #image = cv2.flip(image, -1)
         screen.insert(END,'Read Frame: %d\n' % count)
         count += 1
 
