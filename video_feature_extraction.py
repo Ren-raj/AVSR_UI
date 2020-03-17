@@ -58,6 +58,7 @@ def videp_feature_extraction(screen, END):
         screen.see(END)
         count = count + 1
 
+    '''   
     df = pd.read_csv("pcsv/ccsv_video.csv")
     from openpyxl import load_workbook
 
@@ -67,6 +68,7 @@ def videp_feature_extraction(screen, END):
     reader = pd.read_excel(r'feature_video.xlsx')
     df.to_excel(writer, index=False, header=False, startrow=len(reader) + 2)
     writer.close()
+    '''
     print("\n\n\n...........................ALL FRAMES PROCESSED..............................\n\n\n")
     screen.insert(END, "ALL FRAMES PROCESSED\n")
     screen.see(END)
@@ -79,7 +81,7 @@ def videp_feature_extraction(screen, END):
     print(len(fil))
     print('feature saved')
 
-    with open('feature_video.csv', 'a') as f:
+    with open('feature_video.csv', 'w') as f:
         wtr = csv.writer(f, delimiter=',')
         wtr.writerow(fil)
 
