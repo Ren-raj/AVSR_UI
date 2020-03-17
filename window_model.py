@@ -1,6 +1,7 @@
 from tkinter import *
 global screen
 from window_featureextraction import open_window_fe
+from perform_avsr import  perform_avsr
 
 
 def openfeatureextraction():
@@ -11,6 +12,10 @@ def openfeatureextraction():
 
 
 def avsr():
+
+    digit = perform_avsr()
+    global screen
+    screen.insert(INSERT, str(digit))
 
 
     return

@@ -1,23 +1,19 @@
-import cv2
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import tkMessageBox
 
 
 
 def photo_view(dir):
 
-	img = cv2.imread(dir)
+	try:
 
-	screen_res = 1280, 720
-	scale_width = screen_res[0] / img.shape[1]
-	scale_height = screen_res[1] / img.shape[0]
-	scale = min(scale_width, scale_height)
-	window_width = int(img.shape[1] * scale)
-	window_height = int(img.shape[0] * scale)
-	
-	cv2.namedWindow('AVSR- FRAME', cv2.WINDOW_NORMAL)
-	cv2.resizeWindow('AVSR- FRAME', window_width, window_height)
+		img = mpimg.imread(dir)
+		imgplot = plt.imshow(img)
+		plt.title("AVSR- FRAME")
+		plt.show()
 
-	cv2.imshow('AVSR- FRAME', img)
-	cv2.waitKey(0)
-	cv2.destroyAllWindows()
-
-	return 2
+		return
+	except:
+		tkMessageBox.showinfo(title="Exception !", message="Delay Expected \n Try Again.. :)")
+		return

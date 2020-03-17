@@ -16,12 +16,13 @@ def viewf():
     tkMessageBox.showinfo(title="AVSR_select file", message="select the frame you want to see")
 
     file_dir = tkFileDialog.askopenfilename(title="AVSR_select the frame",initialdir="/home/ash/Desktop/heart")
-    i=photo_view(file_dir)
-    if(i==2):
+
+    try:
+        photo_view(file_dir)
+    except:
+        tkMessageBox.showinfo(title="Exception !", message="Delay Expected \n Try Again.. :)")
         return
-
-
-
+    return
 
 def window_view_file():
 
