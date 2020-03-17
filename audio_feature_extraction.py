@@ -14,11 +14,6 @@ def audio_feature_extraction():
     mfccs = np.mat(mfccs)
     mfccs = pd.DataFrame(mfccs.T)
     print(mfccs)
-    writer = pd.ExcelWriter('feature_audio.xlsx', engine='openpyxl')
-    writer.book = load_workbook('feature_audio.xlsx')
-    writer.sheets = dict((ws.title, ws) for ws in writer.book.worksheets)
-    reader = pd.read_excel(r'feature_audio.xlsx')
-    mfccs.to_excel(writer, index=False, header=False, startrow=len(reader) + 2)
-    writer.close()
-
+    mfccs.to_excel("feature_audio.xlsx", index=False, header=False)
+    
     return 1
